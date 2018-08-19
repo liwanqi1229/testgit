@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.con{width: 600px;height: 200px;border: 1px solid red;margin: 0px auto;background: #FAFAFA;}
+		.con button{margin: 10px 0 0 150px;border: none;}
+	</style>
+</head>
+<body>
+	<div class="con" id="con">
+		用&nbsp;户&nbsp;名&nbsp;：<input type="text" id="user" onblur="on()"><span id="sp1">请输入用户名</span><br/>
+		手机号码：<input type="text" id="number" onblur="num()"><span id="sp2">请输入手机号</span><br/>
+		<button id="btn">注册</button>
+	</div>	
+<script>
+	var oUser=document.getElementById("user");
+	var oSp1=document.getElementById("sp1");
+	var oNumber=document.getElementById("number");
+	var oSp2=document.getElementById("sp2");
+	var oBtn=document.getElementById("btn");
+  
+		function on(){
+			bool=isNaN(oUser.value);
+			if(oUser.value==""){
+				oSp1.innerText="*用户名不能为空！";
+				oSp1.style.color="red";
+			}else if(bool==false){
+				oSp1.innerText="*用户名不能为纯数字！";
+				oSp1.style.color="red";
+			}else{
+				oSp1.innerText="*点击注册！";
+				oSp1.style.color="black";
+			}
+		}
+
+		function num(){
+			bool=isNaN(oNumber.value);
+			if(oNumber.value==""){
+				oSp2.innerText="*手机号不能为空！";
+				oSp2.style.color="red";
+			}else if(bool==true){
+				oSp2.innerText="*请输入手机号！";
+				oSp2.style.color="red";
+			}else{
+				oSp2.innerText="*点击注册！";
+				oSp2.style.color="black";
+			}
+		}
+		
+
+
+
+</script>
+
+
+	
+</body>
+</html>
